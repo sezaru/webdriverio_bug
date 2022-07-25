@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Test Left Click</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    </head>
+    <body>
+        <div id="container2">
+            <a id="inside" href="#">Not Inside Shadow DOM</a>
+        </div>
+        <div id="container"></div>
+        <script type="application/javascript">
+         var container = document.getElementById("container")
+
+         var root = container.attachShadow({mode: "open"})
+
+         var element = document.createElement("a")
+         element.textContent = "Inside Shadow DOM"
+         element.href="#"
+         element.id = "inside"
+
+         root.appendChild(element)
+        </script>
+    </body>
+</html>
